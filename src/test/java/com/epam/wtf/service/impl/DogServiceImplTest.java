@@ -23,7 +23,7 @@ public class DogServiceImplTest {
     DogServiceImpl dogService = new DogServiceImpl(dogs);
 
     @Test
-    public void getDogNames() {
+    public void testGetDogNames() {
         when(dogService.getDogNames()).thenReturn(Arrays.asList("Barsik", "Murzik"));
         assertEquals(Arrays.asList("Barsik", "Murzik"), dogService.getDogNames());
         verify(dogs, atLeastOnce()).getDogNames();
@@ -31,21 +31,21 @@ public class DogServiceImplTest {
     }
 
     @Test
-    public void getDogCounts() {
+    public void testGetDogCounts() {
         when(dogService.getDogCounts()).thenReturn(10);
         assertEquals(10, dogService.getDogCounts());
         verify(dogs).getDogCounts();
     }
 
     @Test
-    public void getDogCounts1() {
+    public void testGetDogCounts1() {
         when(dogService.getDogCounts("Barsik")).thenReturn(1);
         assertEquals(1, dogService.getDogCounts("Barsik"));
         verify(dogs).getDogCounts("Barsik");
     }
 
     @Test
-    public void addDog() {
+    public void testAddDog() {
         Dog barsik = new Dog();
         when(dogService.addDog("Barsik")).thenReturn(barsik);
         assertEquals(barsik, dogService.addDog("Barsik"));

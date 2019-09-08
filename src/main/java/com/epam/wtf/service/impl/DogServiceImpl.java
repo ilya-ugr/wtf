@@ -6,23 +6,29 @@ import com.epam.wtf.service.DogService;
 import java.util.List;
 
 public class DogServiceImpl implements DogService {
+    private DogService dogService;
+
+    public DogServiceImpl(DogService dogService) {
+        this.dogService = dogService;
+    }
+
     @Override
     public List<String> getDogNames() {
-        return null;
+        return dogService.getDogNames();
     }
 
     @Override
     public int getDogCounts() {
-        return 0;
+        return dogService.getDogCounts();
     }
 
     @Override
     public int getDogCounts(String name) {
-        return 0;
+        return dogService.getDogCounts(name);
     }
 
     @Override
     public Dog addDog(String vaccine) {
-        return null;
+        return dogService.addDog(vaccine);
     }
 }
